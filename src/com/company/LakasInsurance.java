@@ -6,9 +6,16 @@ public class LakasInsurance extends Abstract {
     private Integer mellek_buildings;
     boolean lakott_area;
 
+    public LakasInsurance(Integer id, String bizt_address, IngatlanType ingatlantype, Integer mellek_buildings, boolean lakott_area) {
+        super(id);
+        this.bizt_address = bizt_address;
+        this.ingatlantype = ingatlantype;
+        this.mellek_buildings = mellek_buildings;
+        this.lakott_area = lakott_area;
+    }
 
-    public LakasInsurance(String nev, String lakcim, String anyja_neve, String email, String szuldat, Integer id) {
-        super(nev, lakcim, anyja_neve, email, szuldat, id);
+    public LakasInsurance(Integer id) {
+        super(id);
     }
 
     public String getBizt_address() {
