@@ -1,0 +1,62 @@
+
+Program indul:
+-beolvas a létező fájlokból
+-menürenszer megjlenik:
+ 1. új ügyfél felvétele
+ 2. biztosítás kötés
+ 3. biztosítás módosítás
+ 4. ügyfél törlése
+ 5. Adatok listázása
+ 0. kilépés
+
+
+
+
+
+Absztrakt osztály:
+	//Alap adatok bekérése
+	-String név
+	-String lakcím
+	-String anyja neve
+	-String email cím
+	-String születési dátum
+	-Integer ID
+	-boolean biztosítás[boolean,boolean,boolean]
+	
+	
+Alapadatok extends Absztrakt:
+	-semmi
+	
+	
+	
+	
+Lakásbiztosítás exetends Absztrakt:
+	-kérdés? Van-e eggyezés név bekérése alapján, lakcímbe és anyja nevében
+	-ha van: adatok kinyerése
+	-ha nincs: adatok bekérése
+	
+	-String biztosítandó ház címe
+	-Enum ingatlan típusa (Társasház,Családiház)
+	-Integer melléképületek száma (ha Társasház akkor 0)
+	-boolean Lakott területen van? ( ha false akkkor nem lehet rá kötni)
+	
+	
+	
+	
+	
+	
+Gépjárműbiztosítás exetends Absztrakt:
+	-boolean 3.5tonna alatt?
+	-String rendszám
+	-Enum márka
+	-String gyártási év(30 évnél idősebb autóra no-no)
+	-Teljesítmény (LE = nem retardált mértékegység)
+
+
+
+Életbiztosítás extends Absztrakt:
+    -boolean G1MESY VAGY?(ha igen akkor máshova kösd magad)
+    -Integer életkor
+    -boolean krónkus betegség van?
+    -boolean halálos betegség van?(ha van, akkor nem köthető biztosítás szori)
+    -boolean egyéni/családi?
