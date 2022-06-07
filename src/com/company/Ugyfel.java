@@ -19,12 +19,16 @@ public class Ugyfel extends  Abstract{
         this.setId(counter);
     }
 
+    public Ugyfel(Integer id, String nev, String lakcim, String anyja_neve, String email, String szuldat) {
+        super(id);
+        this.nev = nev;
+        this.lakcim = lakcim;
+        this.anyja_neve = anyja_neve;
+        this.email = email;
+        this.szuldat = szuldat;
+    }
 
-
-
-
-
-    //biztosítás vizsgálat helye
+//biztosítás vizsgálat helye
 
     public String getNev() {
         return nev;
