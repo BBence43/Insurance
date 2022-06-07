@@ -11,4 +11,6 @@ public enum Marka {
     Peugeot,
     Suzuki,
     Scania;
+
+
 }

@@ -67,7 +67,41 @@ public class CRUD {
 
         System.out.println("Kérem a ház címét:");
         uj.setBizt_address(be.nextLine());
-        System.out.println();
+        System.out.println("Kérem az ingatlan típusát:");
+        uj.setIngatlantype();
+
+        System.out.println("Kérem adja meg a melléképületek számát:");
+        uj.setMellek_buildings(be.nextInt());
+        be.nextLine();
+
+        System.out.println("Lakott területen található?");
+        if (be.nextLine().equals("nem")){
+            uj.setLakott_area(false);
+        }
+        uj.setLakott_area(true);
+
+        LakasInsurance.lista.add(uj);
+    }
+
+    public void addAuto(){
+        AutoInsurance uj = new AutoInsurance(sorszam());
+
+        System.out.println("3500 kg alatt van?");
+        if (be.nextLine().equals("igen")){
+            uj.setTonna(false);
+        }else {
+            uj.setTonna(true);
+        }
+
+        System.out.println("Kérem a rendszámot:");
+        uj.setRendszam(be.nextLine());
+        System.out.println("Kérem adja meg a gyártás évet:");
+        uj.setGyartasiev(be.nextLine());
+        System.out.println("Kérem adja meg a teljesítményt:");
+        uj.setTeljesitmeny(be.nextInt());
+        be.nextLine();
+
+        AutoInsurance.lista.add(uj);
     }
 
 

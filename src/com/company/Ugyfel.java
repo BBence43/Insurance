@@ -26,6 +26,7 @@ public class Ugyfel extends  Abstract{
         this.anyja_neve = anyja_neve;
         this.email = email;
         this.szuldat = szuldat;
+        counter++;
     }
 
 //biztosítás vizsgálat helye
@@ -74,7 +75,7 @@ public class Ugyfel extends  Abstract{
         counter++;
     }
 
-    public int getCounter(){ return counter;};
+    public int getCounter(){ return counter;}
 
 
 }
