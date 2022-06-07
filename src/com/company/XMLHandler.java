@@ -11,6 +11,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
@@ -101,7 +102,7 @@ public class XMLHandler {
                 user.appendChild(gyartasiev);
 
                 Element teljesitmeny = doc.createElement("teljesitmeny");
-                teljesitmeny.setTextContent(Integer.toString(AutoInsurance.lista.get(i).getEmail()));
+                teljesitmeny.setTextContent(Integer.toString(AutoInsurance.lista.get(i).geTeljesitmeny()));
                 user.appendChild(teljesitmeny);
 
                 Element id = doc.createElement("id");
@@ -209,6 +210,38 @@ public class XMLHandler {
             e.printStackTrace();
         }
         System.out.println("Sikeres mentés!");
+    }
+
+
+
+
+    public void FileChecker(){
+        File fileugyfel = new File("ugyfelek.xml");
+        if (fileugyfel.exists()){
+            FileLoad();
+        }else{
+            WriteUgyfel();
+        }
+        File fileauto = new File("auto.xml");
+        if (fileugyfel.exists()){
+            FileLoad();
+        }else{
+            WriteAuto();
+        }
+        File fileproperty = new File("property.xml");
+        if (fileproperty.exists()){
+            FileLoad();
+        }else{
+            WriteLakas();
+        }
+        File filelife = new File("life.xml");
+        if (filelife.exists()){
+            FileLoad();
+        }else{
+            WriteElet();
+        }
+
+
     }
 
 }
