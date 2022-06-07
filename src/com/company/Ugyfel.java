@@ -1,16 +1,26 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Ugyfel extends  Abstract{
+
+    private int counter = 0;
+
     private String nev;
     private String lakcim;
     private String anyja_neve;
     private String email;
     private String szuldat;
-    private boolean[] biztositas = new boolean[3];
+    public static ArrayList<Integer> idk = new ArrayList<>();
 
-    public Ugyfel(Integer id) {
-        super(id);
+
+    public Ugyfel(){
+        counter++;
+        this.setId(counter);
     }
+
+
+
 
 
 
@@ -56,11 +66,11 @@ public class Ugyfel extends  Abstract{
         this.szuldat = szuldat;
     }
 
-    public boolean[] getBiztositas() {
-        return biztositas;
+    public void increaseCounter(){
+        counter++;
     }
 
-    public void setBiztositas(boolean[] biztositas) {
-        this.biztositas = biztositas;
-    }
+    public int getCounter(){ return counter};
+
+
 }

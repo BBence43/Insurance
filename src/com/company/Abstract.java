@@ -3,6 +3,8 @@ package com.company;
 abstract class Abstract {
     private Integer id;
 
+    Abstract(){}
+
     public Abstract(Integer id) {
         this.id = id;
     }

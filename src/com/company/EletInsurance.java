@@ -5,27 +5,27 @@ public class EletInsurance extends Abstract {
         super(id);
     }
 
-    private boolean g1mesy;
+    private boolean fogyatekos;
     private Integer eletkor;
     private boolean kronikus;
     private boolean halalos;
     private boolean ecs;
 
-    public EletInsurance(Integer id, boolean g1mesy, Integer eletkor, boolean kronikus, boolean halalos, boolean ecs) {
+    public EletInsurance(Integer id, boolean fogyatekos, Integer eletkor, boolean kronikus, boolean halalos, boolean ecs) {
         super(id);
-        this.g1mesy = g1mesy;
+        this.fogyatekos = fogyatekos;
         this.eletkor = eletkor;
         this.kronikus = kronikus;
         this.halalos = halalos;
         this.ecs = ecs;
     }
 
-    public boolean isG1mesy() {
-        return g1mesy;
+    public boolean isFogyatekos() {
+        return fogyatekos;
     }
 
-    public void setG1mesy(boolean g1mesy) {
-        this.g1mesy = g1mesy;
+    public void setFogyatekos(boolean fogyatekos) {
+        this.fogyatekos = fogyatekos;
     }
 
     public Integer getEletkor() {
