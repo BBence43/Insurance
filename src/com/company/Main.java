@@ -19,4 +19,15 @@ public class Main {
         }
 
     }
+
+    public static void Menupontok(){
+        System.out.println("Biztosítás");
+        System.out.println("--------------------");
+        System.out.println("1. Új ügyfél");
+        System.out.println("2. Új biztosítás");
+        System.out.println("3. Biztosítás módosítás");
+        System.out.println("4. Ügyfél törlése");
+        System.out.println("5. Adatok listázása");
+        System.out.println("0. Kilépés");
+    }
 }
