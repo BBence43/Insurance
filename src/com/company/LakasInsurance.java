@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LakasInsurance extends Abstract {
     private String bizt_address;
@@ -34,7 +35,17 @@ public class LakasInsurance extends Abstract {
     }
 
     public void setIngatlantype(IngatlanType ingatlantype) {
-        this.ingatlantype = ingatlantype;
+        this.ingatlantype = ingatlantype;}
+    public void setIngatlantype() {
+        System.out.println("Kérem válasszon az alábbiak közül a helyes szám megnyomásával:");
+        System.out.println("1. Társasház\t 2. Családi ház");
+        Scanner be = new Scanner(System.in);
+        switch (be.nextInt()){
+            case 1: this.ingatlantype = IngatlanType.Társasház; break;
+            case 2: this.ingatlantype = IngatlanType.Családiház;break;
+
+
+        }
     }
 
     public Integer getMellek_buildings() {

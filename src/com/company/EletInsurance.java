@@ -13,7 +13,7 @@ public class EletInsurance extends Abstract {
     private boolean halalos;
     private boolean ecs;
 
-    public EletInsurance(Integer id, boolean g1mesy, Integer eletkor, boolean kronikus, boolean halalos, boolean ecs) {
+    public EletInsurance(Integer id, boolean fogyatekos, Integer eletkor, boolean kronikus, boolean halalos, boolean ecs) {
         super(id);
         this.fogyatekos = fogyatekos;
         this.eletkor = eletkor;
@@ -26,8 +26,8 @@ public class EletInsurance extends Abstract {
         return fogyatekos;
     }
 
-    public void setG1mesy(boolean g1mesy) {
-        this.fogyatekos = g1mesy;
+    public void setFogyatekos(boolean fogyatekos) {
+        this.fogyatekos = fogyatekos;
     }
 
     public Integer getEletkor() {

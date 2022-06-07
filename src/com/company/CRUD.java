@@ -22,35 +22,70 @@ public class CRUD {
     }
 
     public void addEletInsurance(){
-        for (int i = 0; i < Ugyfel.lista.size(); i++) {
-            System.out.println(Ugyfel.lista.get(i).getNev()
-                + "\t"+ Ugyfel.lista.get(i).getLakcim()
-                + "\t"+ Ugyfel.lista.get(i).getEmail()
-
-            );
-        }
-
-        System.out.println("Az ügyfél szerepel a rendszerben?(ha nem, akkor nyomjon 0-t");
-        if (be.nextLine().equals("0")){
-            System.out.println("Kérjük vegye fel az ügyfél adatait:");
-            addUgyfel();
-        }else{
-            System.out.println("Kérem adja meg a sorszámát a fentebbi listáról");
-            int elem = be.nextInt();
-            be.nextLine();
 
 
-        }
-
-        System.out.println("Küzd fogyatékossággal?(igen/nem");
+        EletInsurance uj = new EletInsurance(Ugyfel.lista.get(sorszam()).getId());
+        System.out.println("Küzd fogyatékossággal?(igen/nem)");
         if (be.nextLine().equals("igen")){
-
+            uj.setFogyatekos(true);
+        }else{
+            uj.setFogyatekos(false);
         }
+        System.out.println("Hány éves az akire kötik?(igen/nem)");
+        uj.setEletkor(be.nextInt());
+        be.nextLine();
+
+        System.out.println("Van krónikus betegsége?(igen/nem)");
+        if (be.nextLine().equals("igen")){
+            uj.setKronikus(true);
+        }else {
+            uj.setKronikus(false);
+        }
+
+        System.out.println("Van halálos betegsége?(igen/nem)");
+        if (be.nextLine().equals("igen")){
+            uj.setHalalos(true);
+        }else{
+            uj.setHalalos(false);
+        }
+
+        System.out.println("Egyéni vagy családi?");
+        if (be.nextLine().equals("egyéni")){
+            uj.setEcs(true);
+        }else{
+            uj.setEcs(false);
+        }
+        EletInsurance.lista.add(uj);
+
 
 
     }
 
+    public void addLakas(){
+
+        LakasInsurance uj = new LakasInsurance(sorszam());
+
+        System.out.println("Kérem a ház címét:");
+        uj.setBizt_address(be.nextLine());
+        System.out.println();
+    }
 
 
+public int sorszam(){
+    for (int i = 0; i < Ugyfel.lista.size(); i++) {
+        System.out.println((i+1)+"." + Ugyfel.lista.get(i).getNev()
+                + "\t"+ Ugyfel.lista.get(i).getLakcim()
+                + "\t"+ Ugyfel.lista.get(i).getEmail()
+
+        );
+    }
+    int elem;
+    System.out.println("Kérem adja meg a személy sorszámát:");
+    elem = be.nextInt();
+    be.nextLine();
+
+    return elem;
+
+}
 
 }
