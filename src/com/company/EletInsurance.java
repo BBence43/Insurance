@@ -1,10 +1,12 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class EletInsurance extends Abstract {
     public EletInsurance(Integer id) {
         super(id);
     }
-
+    public static ArrayList<EletInsurance> lista = new ArrayList<>();
     private boolean fogyatekos;
     private Integer eletkor;
     private boolean kronikus;

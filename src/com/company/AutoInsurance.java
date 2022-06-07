@@ -1,9 +1,12 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class AutoInsurance extends Abstract{
     public AutoInsurance(Integer id) {
         super(id);
     }
+    public static ArrayList<AutoInsurance> lista = new ArrayList<>();
     private boolean tonna;
     private String rendszam;
     private String gyartasiev;

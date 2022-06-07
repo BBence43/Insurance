@@ -1,7 +1,10 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class LakasInsurance extends Abstract {
     private String bizt_address;
+    public static ArrayList<LakasInsurance> lista = new ArrayList<>();
     private IngatlanType ingatlantype;
     private Integer mellek_buildings;
     boolean lakott_area;

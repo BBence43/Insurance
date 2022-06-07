@@ -101,7 +101,7 @@ public class XMLHandler {
                 user.appendChild(gyartasiev);
 
                 Element teljesitmeny = doc.createElement("teljesitmeny");
-                teljesitmeny.setTextContent(Integer.toString(AutoInsurance.lista.get(i).getEmail()));
+                teljesitmeny.setTextContent(Integer.toString(AutoInsurance.lista.get(i).getTeljesitmeny()));
                 user.appendChild(teljesitmeny);
 
                 Element id = doc.createElement("id");
@@ -133,11 +133,11 @@ public class XMLHandler {
                 rootElement.appendChild(user);
 
                 Element biztaddress = doc.createElement("tonna");
-                biztaddress.setTextContent(Boolean.toString(LakasInsurance.lista.get(i).getBizt_address()));
+                biztaddress.setTextContent(LakasInsurance.lista.get(i).getBizt_address());
                 user.appendChild(biztaddress);
 
                 Element ingatlantype = doc.createElement("ingatlantype");
-                ingatlantype.setTextContent(LakasInsurance.lista.get(i).getIngatlantype());
+                ingatlantype.setTextContent(LakasInsurance.lista.get(i).getIngatlantype().toString());
                 user.appendChild(ingatlantype);
 
                 Element mellekepuletekszama = doc.createElement("mellekepuletek");
@@ -145,7 +145,7 @@ public class XMLHandler {
                 user.appendChild(mellekepuletekszama);
 
                 Element lakott = doc.createElement("lakottság");
-                lakott.setTextContent(LakasInsurance.lista.get(i).isLakott_area());
+                lakott.setTextContent(Boolean.toString(LakasInsurance.lista.get(i).isLakott_area()));
                 user.appendChild(lakott);
 
                 Element id = doc.createElement("id");

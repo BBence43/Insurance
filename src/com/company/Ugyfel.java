@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Ugyfel extends  Abstract{
 
     private int counter = 0;
-
+    public static ArrayList<Ugyfel> lista = new ArrayList<>();
     private String nev;
     private String lakcim;
     private String anyja_neve;
@@ -70,7 +70,7 @@ public class Ugyfel extends  Abstract{
         counter++;
     }
 
-    public int getCounter(){ return counter};
+    public int getCounter(){ return counter;}
 
 
 }
