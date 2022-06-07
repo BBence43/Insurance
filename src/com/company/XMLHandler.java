@@ -196,6 +196,10 @@ public class XMLHandler {
                 halalos.setTextContent(Boolean.toString(EletInsurance.lista.get(i).isKronikus()));
                 user.appendChild(halalos);
 
+                Element ecs = doc.createElement("ecs");
+                ecs.setTextContent(Boolean.toString(EletInsurance.lista.get(i).isEcs()));
+                user.appendChild(ecs);
+
                 Element id = doc.createElement("id");
                 id.setTextContent(Integer.toString(EletInsurance.lista.get(i).getId()));
                 user.appendChild(id);
@@ -335,8 +339,9 @@ public class XMLHandler {
                 Integer eletkor =Integer.valueOf(element.getElementsByTagName("eletkor").item(0).getTextContent());
                 Boolean kronikus = Boolean.valueOf(element.getElementsByTagName("kronikus").item(0).getTextContent());
                 Boolean halalos = Boolean.valueOf(element.getElementsByTagName("halalos").item(0).getTextContent());
+                Boolean ecs = Boolean.valueOf(element.getElementsByTagName("ecs").item(0).getTextContent());
                 Integer id = Integer.valueOf(element.getElementsByTagName("id").item(0).getTextContent());
-                EletInsurance life = new EletInsurance(id,fogyatekos,eletkor,kronikus,halalos);
+                EletInsurance life = new EletInsurance(id,fogyatekos,eletkor,kronikus,halalos,ecs);
                 EletInsurance.lista.add(life);
             }
         }
