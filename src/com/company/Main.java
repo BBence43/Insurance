@@ -21,7 +21,7 @@ public class Main {
 
     }
 
-    public static void Menupontok(){
+    public void Menupontok(){
         System.out.println("Biztosítás");
         System.out.println("--------------------");
         System.out.println("1. Új ügyfél");
