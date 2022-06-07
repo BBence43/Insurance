@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        //UwU
         int menupont = -1;
         while(menupont != 0){
             switch (menupont){
