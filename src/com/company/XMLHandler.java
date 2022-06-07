@@ -11,6 +11,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
@@ -132,7 +133,7 @@ public class XMLHandler {
                 Element user = doc.createElement("Property");
                 rootElement.appendChild(user);
 
-                Element biztaddress = doc.createElement("tonna");
+                Element biztaddress = doc.createElement("biztaddress");
                 biztaddress.setTextContent(LakasInsurance.lista.get(i).getBizt_address());
                 user.appendChild(biztaddress);
 
@@ -209,6 +210,38 @@ public class XMLHandler {
             e.printStackTrace();
         }
         System.out.println("Sikeres mentés!");
+    }
+
+
+
+
+    public void FileChecker(){
+        File fileugyfel = new File("ugyfelek.xml");
+        if (fileugyfel.exists()){
+            FileLoad();
+        }else{
+            WriteUgyfel();
+        }
+        File fileauto = new File("auto.xml");
+        if (fileugyfel.exists()){
+            FileLoad();
+        }else{
+            WriteAuto();
+        }
+        File fileproperty = new File("property.xml");
+        if (fileproperty.exists()){
+            FileLoad();
+        }else{
+            WriteLakas();
+        }
+        File filelife = new File("life.xml");
+        if (filelife.exists()){
+            FileLoad();
+        }else{
+            WriteElet();
+        }
+
+
     }
 
 }
