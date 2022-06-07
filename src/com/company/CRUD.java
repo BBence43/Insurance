@@ -34,6 +34,12 @@ public class CRUD {
         if (be.nextLine().equals("0")){
             System.out.println("Kérjük vegye fel az ügyfél adatait:");
             addUgyfel();
+        }else{
+            System.out.println("Kérem adja meg a sorszámát a fentebbi listáról");
+            int elem = be.nextInt();
+            be.nextLine();
+
+
         }
 
         System.out.println("Küzd fogyatékossággal?(igen/nem");
