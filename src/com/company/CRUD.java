@@ -24,7 +24,7 @@ public class CRUD {
     public void addEletInsurance(){
 
 
-        EletInsurance uj = new EletInsurance(Ugyfel.lista.get(sorszam()).getId());
+        EletInsurance uj = new EletInsurance(sorszam());
         System.out.println("Küzd fogyatékossággal?(igen/nem)");
         if (be.nextLine().equals("igen")){
             uj.setFogyatekos(true);
@@ -100,6 +100,8 @@ public class CRUD {
         System.out.println("Kérem adja meg a teljesítményt:");
         uj.setTeljesitmeny(be.nextInt());
         be.nextLine();
+        System.out.println("Kérem a járgány márkáját:");
+        uj.setMarka(be.nextLine());
 
         AutoInsurance.lista.add(uj);
     }
@@ -123,3 +125,7 @@ public int sorszam(){
 }
 
 }
+
+
+
+

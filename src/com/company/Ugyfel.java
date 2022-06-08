@@ -74,6 +74,7 @@ public class Ugyfel extends  Abstract{
 
     public void increaseCounter(){
         counter++;
+        Ugyfel.lista.add(this);
     }
 
     public static int getCounter(){ return counter;}

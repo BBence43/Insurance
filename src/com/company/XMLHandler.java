@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class XMLHandler {
-    private static void writeXml(Document doc, OutputStream output) throws TransformerException {
+    private static void writeXml(Document doc, FileOutputStream output) throws TransformerException {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT,"yes");
@@ -37,7 +37,7 @@ public class XMLHandler {
             Document doc = docBuilder.newDocument();
             Element rootElement = doc.createElement("Customers");
             doc.appendChild(rootElement);
-            for (int i = 0; i<Ugyfel.lista.size();i++){
+            for (int i = 0; i < Ugyfel.lista.size();i++){
                 Element user = doc.createElement("Customer");
                 rootElement.appendChild(user);
 
@@ -66,7 +66,7 @@ public class XMLHandler {
                 user.appendChild(id);
 
 
-                try(FileOutputStream outputStream = new FileOutputStream("ugyfelek.xml") ){
+                try(FileOutputStream outputStream = new FileOutputStream("ugyfelek.xml")){
                     writeXml(doc,outputStream);
                 }catch (Exception ex){
                     ex.printStackTrace();
@@ -77,7 +77,7 @@ public class XMLHandler {
             System.out.println("Hiba: ");
             e.printStackTrace();
         }
-        System.out.println("Sikeres mentés!");
+        System.out.println("Sikeres ügyfél mentés!");
     }
 
     public void WriteAuto(){
@@ -111,8 +111,12 @@ public class XMLHandler {
                 id.setTextContent(Integer.toString(AutoInsurance.lista.get(i).getId()));
                 user.appendChild(id);
 
+                Element marka = doc.createElement("marka");
+                marka.setTextContent(AutoInsurance.lista.get(i).getmarka());
+                user.appendChild(marka);
+
                 try(FileOutputStream outputStream = new FileOutputStream("auto.xml") ){
-                    writeXml(doc,outputStream);
+                    //writeXml(doc,outputStream);
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }
@@ -122,7 +126,7 @@ public class XMLHandler {
             System.out.println("Hiba: ");
             e.printStackTrace();
         }
-        System.out.println("Sikeres mentés!");
+        System.out.println("Sikeres autó mentés!");
     }
     public void WriteLakas(){
         try {
@@ -156,7 +160,7 @@ public class XMLHandler {
                 user.appendChild(id);
 
                 try(FileOutputStream outputStream = new FileOutputStream("property.xml") ){
-                    writeXml(doc,outputStream);
+                  //  writeXml(doc,outputStream);
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }
@@ -166,7 +170,7 @@ public class XMLHandler {
             System.out.println("Hiba: ");
             e.printStackTrace();
         }
-        System.out.println("Sikeres mentés!");
+        System.out.println("Sikeres lakás mentés!");
     }
 
     public void WriteElet(){
@@ -215,7 +219,7 @@ public class XMLHandler {
             System.out.println("Hiba: ");
             e.printStackTrace();
         }
-        System.out.println("Sikeres mentés!");
+        System.out.println("Sikeres élet mentés!");
     }
 
     public void FileLoadUgyfel(){
@@ -227,7 +231,7 @@ public class XMLHandler {
 
             NodeList list = document.getElementsByTagName("Ugyfel");
             manageNodeUgyfel(list);
-            System.out.println("Sikeres betöltés!");
+            System.out.println("Sikeres autó betöltés!");
 
         }catch (Exception e){
             e.printStackTrace();
@@ -277,7 +281,8 @@ public class XMLHandler {
                 String gyartasiev = String.valueOf(element.getElementsByTagName("gyartasiev").item(0).getTextContent());
                 Integer teljesitmeny = Integer.valueOf(element.getElementsByTagName("email").item(0).getTextContent());
                 Integer id = Integer.valueOf(element.getElementsByTagName("id").item(0).getTextContent());
-                AutoInsurance auto = new AutoInsurance(id,tonna,rendszam,gyartasiev,teljesitmeny);
+                String marka = element.getElementsByTagName("marka").item(0).getTextContent();
+                AutoInsurance auto = new AutoInsurance(id,tonna,rendszam,gyartasiev,teljesitmeny,marka);
                 AutoInsurance.lista.add(auto);
             }
         }
@@ -323,7 +328,7 @@ public class XMLHandler {
 
             NodeList list = document.getElementsByTagName("Life");
             manageNodeLife(list);
-            System.out.println("Sikeres betöltés!");
+            System.out.println("Sikeres élet betöltés!");
 
         }catch (Exception e){
             e.printStackTrace();
