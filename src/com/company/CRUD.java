@@ -131,6 +131,8 @@ public class CRUD {
         System.out.println("Kérem adja meg a teljesítményt:");
         uj.setTeljesitmeny(be.nextInt());
         be.nextLine();
+        System.out.println("Kérem a járgány típusát:");
+        uj.setMarka(be.nextLine());
 
         AutoInsurance.lista.add(uj);
     }
