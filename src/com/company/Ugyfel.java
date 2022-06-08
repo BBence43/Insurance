@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Ugyfel extends  Abstract{
 
-    private int counter = 0;
+    private static int counter = 0;
     public static ArrayList<Ugyfel> lista = new ArrayList<>();
     private String nev;
     private String lakcim;
@@ -27,6 +27,7 @@ public class Ugyfel extends  Abstract{
         this.email = email;
         this.szuldat = szuldat;
         counter++;
+        lista.add(this);
     }
 
 //biztosítás vizsgálat helye
@@ -75,7 +76,7 @@ public class Ugyfel extends  Abstract{
         counter++;
     }
 
-    public int getCounter(){ return counter;}
+    public static int getCounter(){ return counter;}
 
 
 }

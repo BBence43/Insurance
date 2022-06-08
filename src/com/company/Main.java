@@ -1,12 +1,22 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
         //UwU
+        XMLHandler xml = new XMLHandler();
+        Ugyfel uj = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
+        Ugyfel uj1 = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
+        System.out.println(uj.getAnyja_neve());
+        System.out.println(Ugyfel.lista.size());
+        Scanner beker = new Scanner(System.in);
         int menupont = -1;
         while(menupont != 0){
+            Menupontok();
+            menupont = beker.nextInt();
             switch (menupont){
                 case 1: break;
                 case 2: break;
@@ -18,10 +28,10 @@ public class Main {
             }
 
         }
-
+        xml.FileChecker();
     }
 
-    public void Menupontok(){
+    public static void Menupontok(){
         System.out.println("Biztosítás");
         System.out.println("--------------------");
         System.out.println("1. Új ügyfél");
