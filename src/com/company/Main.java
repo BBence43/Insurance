@@ -8,6 +8,8 @@ public class Main {
 	// write your code here
         //UwU
         XMLHandler xml = new XMLHandler();
+        xml.FileChecker();
+        CRUD command = new CRUD();
         Ugyfel uj = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
         Ugyfel uj1 = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
         System.out.println(uj.getAnyja_neve());
@@ -18,7 +20,7 @@ public class Main {
             Menupontok();
             menupont = beker.nextInt();
             switch (menupont){
-                case 1: break;
+                case 1: command.addUgyfel(); xml.WriteUgyfel(); break;
                 case 2: break;
                 case 3: break;
                 case 4: break;
@@ -28,7 +30,7 @@ public class Main {
             }
 
         }
-        xml.FileChecker();
+
     }
 
     public static void Menupontok(){

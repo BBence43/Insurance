@@ -259,7 +259,7 @@ public class XMLHandler {
             Document document = db.parse(new File("auto.xml"));
 
             NodeList list = document.getElementsByTagName("Car");
-            manageNodeUgyfel(list);
+            manageNodeAuto(list);
             System.out.println("Sikeres betöltés!");
 
         }catch (Exception e){
@@ -291,7 +291,7 @@ public class XMLHandler {
             Document document = db.parse(new File("property.xml"));
 
             NodeList list = document.getElementsByTagName("Property");
-            manageNodeUgyfel(list);
+            manageNodeProperty(list);
             System.out.println("Sikeres betöltés!");
 
         }catch (Exception e){
@@ -322,7 +322,7 @@ public class XMLHandler {
             Document document = db.parse(new File("life.xml"));
 
             NodeList list = document.getElementsByTagName("Life");
-            manageNodeUgyfel(list);
+            manageNodeLife(list);
             System.out.println("Sikeres betöltés!");
 
         }catch (Exception e){
@@ -356,25 +356,25 @@ public class XMLHandler {
         if (fileugyfel.exists()){
             FileLoadUgyfel();
         }else{
-            WriteUgyfel();
+            System.out.println("ugyfelek.xml nem létezik");
         }
         File fileauto = new File("auto.xml");
-        if (fileugyfel.exists()){
+        if (fileauto.exists()){
             FileLoadAuto();
         }else{
-            WriteAuto();
+            System.out.println("auto.xml fájl nem létezik");
         }
         File fileproperty = new File("property.xml");
         if (fileproperty.exists()){
             FileLoadProperty();
         }else{
-            WriteLakas();
+            System.out.println("property.xml nem létezik");
         }
         File filelife = new File("life.xml");
         if (filelife.exists()){
             FileLoadLife();
         }else{
-            WriteElet();
+            System.out.println("life.xml nem létezik");
         }
 
 
