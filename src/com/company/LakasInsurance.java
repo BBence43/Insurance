@@ -16,6 +16,7 @@ public class LakasInsurance extends Abstract {
         this.ingatlantype = ingatlantype;
         this.mellek_buildings = mellek_buildings;
         this.lakott_area = lakott_area;
+        LakasInsurance.lista.add(this);
     }
 
     public LakasInsurance(Integer id) {

@@ -27,7 +27,7 @@ public class Ugyfel extends  Abstract{
         this.email = email;
         this.szuldat = szuldat;
         counter++;
-        lista.add(this);
+
     }
 
 //biztosítás vizsgálat helye

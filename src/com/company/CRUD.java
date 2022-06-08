@@ -21,6 +21,7 @@ public class CRUD {
 
         System.out.println("A jelenlegi id szám:" + uj.getCounter());
         Ugyfel.lista.add(uj);
+        xml.WriteUgyfel();
     }
 
     public void Insurance(){
@@ -141,8 +142,11 @@ public class CRUD {
 public int sorszam(){
     for (int i = 0; i < Ugyfel.lista.size(); i++) {
         System.out.println((i+1)+"." + Ugyfel.lista.get(i).getNev()
-                + "\t"+ Ugyfel.lista.get(i).getLakcim()
-                + "\t"+ Ugyfel.lista.get(i).getEmail()
+                + "|\t"+ Ugyfel.lista.get(i).getLakcim()
+                + "|\t"+ Ugyfel.lista.get(i).getEmail()
+                + "|\t"+ Ugyfel.lista.get(i).getAnyja_neve()
+                + "|\t"+ Ugyfel.lista.get(i).getSzuldat()
+                + "|\t"+ Ugyfel.lista.get(i).getId()
         );
     }
     int elem;

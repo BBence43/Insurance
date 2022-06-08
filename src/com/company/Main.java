@@ -10,18 +10,24 @@ public class Main {
         XMLHandler xml = new XMLHandler();
         xml.FileChecker();
         CRUD command = new CRUD();
-        Ugyfel uj = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
-        Ugyfel uj1 = new Ugyfel(2,"Lakatos","asd","asd","asd","asd");
-        Ugyfel uj2 = new Ugyfel(3,"Lakatos","asd","asd","asd","asd");
-        System.out.println(uj.getAnyja_neve());
-        System.out.println(Ugyfel.lista.size());
+        //Ugyfel uj = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
+        //Ugyfel uj1 = new Ugyfel(2,"Lakatos","asd","asd","asd","asd");
+        //Ugyfel uj2 = new Ugyfel(3,"Lakatos","asd","asd","asd","asd");
+        //System.out.println(uj.getAnyja_neve());
+        //System.out.println(Ugyfel.lista.size());
         Scanner beker = new Scanner(System.in);
+
+        //Dominik holnapi feladatai
+        //listázás, választható hogy mit
+        //ügyfél törlés, + vele együtt lévő biztosítások
+        //ügyfél módosítása
+
         int menupont = -1;
         while(menupont != 0){
             Menupontok();
             menupont = beker.nextInt();
             switch (menupont){
-                case 1: command.addUgyfel(); xml.WriteUgyfel(); break;
+                case 1: command.addUgyfel();  break;
                 case 2: command.Insurance(); break;
                 case 3: break;
                 case 4: break;

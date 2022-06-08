@@ -116,7 +116,7 @@ public class XMLHandler {
                 user.appendChild(marka);
 
                 try(FileOutputStream outputStream = new FileOutputStream("auto.xml") ){
-                    //writeXml(doc,outputStream);
+                    writeXml(doc,outputStream);
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }
@@ -126,8 +126,10 @@ public class XMLHandler {
             System.out.println("Hiba: ");
             e.printStackTrace();
         }
-        System.out.println("Sikeres autó mentés!");
+        System.out.println("Sikeres mentés!");
     }
+
+
     public void WriteLakas(){
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -229,9 +231,9 @@ public class XMLHandler {
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document document = db.parse(new File("ugyfelek.xml"));
 
-            NodeList list = document.getElementsByTagName("Ugyfel");
+            NodeList list = document.getElementsByTagName("Customer");
             manageNodeUgyfel(list);
-            System.out.println("Sikeres autó betöltés!");
+            System.out.println("Sikeres ügyfél betöltés!");
 
         }catch (Exception e){
             e.printStackTrace();
@@ -240,6 +242,7 @@ public class XMLHandler {
     //Ez a metódus felel a Nodelistbe előzőlegesen betöltött adatok betöltéséért az Ugyfel Classba, vagyis az adatokat betöltjük a programba az XML fájlból.
     private static void manageNodeUgyfel(NodeList nodeList) {
         for (int count = 0;count < nodeList.getLength();count++){
+            System.out.println("A nodelist hossza:" + nodeList.getLength());
             Node tmpNode = nodeList.item(count);
             if (tmpNode.getNodeType() == Node.ELEMENT_NODE){
                 Element element = (Element) tmpNode;
@@ -251,6 +254,7 @@ public class XMLHandler {
                 Integer id = Integer.valueOf(element.getElementsByTagName("id").item(0).getTextContent());
                 Ugyfel ugyfel = new Ugyfel(id,name,lakcim,anyjaneve,email,szuletesidatum);
                 Ugyfel.lista.add(ugyfel);
+                System.out.println("betöltöttem ezt:\n" + ugyfel);
             }
         }
     }
@@ -264,7 +268,7 @@ public class XMLHandler {
 
             NodeList list = document.getElementsByTagName("Car");
             manageNodeAuto(list);
-            System.out.println("Sikeres betöltés!");
+            System.out.println("Sikeres autó betöltés!");
 
         }catch (Exception e){
             e.printStackTrace();
@@ -279,7 +283,7 @@ public class XMLHandler {
                 Boolean tonna =Boolean.valueOf(element.getElementsByTagName("tonna").item(0).getTextContent()) ;
                 String rendszam = element.getElementsByTagName("rendszam").item(0).getTextContent();
                 String gyartasiev = String.valueOf(element.getElementsByTagName("gyartasiev").item(0).getTextContent());
-                Integer teljesitmeny = Integer.valueOf(element.getElementsByTagName("email").item(0).getTextContent());
+                Integer teljesitmeny = Integer.valueOf(element.getElementsByTagName("teljesitmeny").item(0).getTextContent());
                 Integer id = Integer.valueOf(element.getElementsByTagName("id").item(0).getTextContent());
                 String marka = element.getElementsByTagName("marka").item(0).getTextContent();
                 AutoInsurance auto = new AutoInsurance(id,tonna,rendszam,gyartasiev,teljesitmeny,marka);

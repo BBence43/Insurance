@@ -22,6 +22,7 @@ public class AutoInsurance extends Abstract{
         this.gyartasiev = gyartasiev;
         this.teljesitmeny = teljesitmeny;
         setMarka(marka);
+        AutoInsurance.lista.add(this);
     }
 
     public boolean isTonna() {
@@ -57,16 +58,16 @@ public class AutoInsurance extends Abstract{
     }
     public void setMarka(String marka){
         switch (marka.toUpperCase()){
-            case "AUDI": this.marka = Marka.Audi;
-            case "BMW": this.marka = Marka.BMW;
-            case "MERCEDES": this.marka = Marka.Mercedes;
-            case "MAZDA": this.marka = Marka.Mazda;
-            case "OPEL": this.marka = Marka.Opel;
-            case "MAN": this.marka = Marka.MAN;
-            case "VOLVO": this.marka = Marka.Volvo;
-            case "PEUGEOT": this.marka = Marka.Peugeot;
-            case "SUZUKI": this.marka = Marka.Suzuki;
-            case "SCANIA": this.marka = Marka.Scania;
+            case "AUDI": this.marka = Marka.Audi;break;
+            case "BMW": this.marka = Marka.BMW;break;
+            case "MERCEDES": this.marka = Marka.Mercedes;break;
+            case "MAZDA": this.marka = Marka.Mazda;break;
+            case "OPEL": this.marka = Marka.Opel;break;
+            case "MAN": this.marka = Marka.MAN;break;
+            case "VOLVO": this.marka = Marka.Volvo;break;
+            case "PEUGEOT": this.marka = Marka.Peugeot;break;
+            case "SUZUKI": this.marka = Marka.Suzuki;break;
+            case "SCANIA": this.marka = Marka.Scania;break;
         }
 
 
