@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
+//asd
     public static void main(String[] args) {
 	// write your code here
         //UwU
