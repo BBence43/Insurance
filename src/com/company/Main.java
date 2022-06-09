@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.managgers.Administration;
+import com.company.managgers.XMLHandler;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +12,7 @@ public class Main {
         //UwU
         XMLHandler xml = new XMLHandler();
         xml.FileChecker();
-        CRUD command = new CRUD();
+        Administration administration = new Administration();
         //Ugyfel uj = new Ugyfel(1,"Lakatos","asd","asd","asd","asd");
         //Ugyfel uj1 = new Ugyfel(2,"Lakatos","asd","asd","asd","asd");
         //Ugyfel uj2 = new Ugyfel(3,"Lakatos","asd","asd","asd","asd");
@@ -27,8 +30,8 @@ public class Main {
             Menupontok();
             menupont = beker.nextInt();
             switch (menupont){
-                case 1: command.addUgyfel();  break;
-                case 2: command.Insurance(); break;
+                case 1: administration.addUgyfel();  break;
+                case 2: administration.Insurance(); break;
                 case 3: break;
                 case 4: break;
                 case 5: break;

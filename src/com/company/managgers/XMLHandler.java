@@ -1,5 +1,6 @@
-package com.company;
+package com.company.managgers;
 
+import com.company.models.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -15,7 +16,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 
 public class XMLHandler {
     private static void writeXml(Document doc, FileOutputStream output) throws TransformerException {
@@ -37,7 +37,7 @@ public class XMLHandler {
             Document doc = docBuilder.newDocument();
             Element rootElement = doc.createElement("Customers");
             doc.appendChild(rootElement);
-            for (int i = 0; i < Ugyfel.lista.size();i++){
+            for (int i = 0; i < Ugyfel.lista.size(); i++){
                 Element user = doc.createElement("Customer");
                 rootElement.appendChild(user);
 

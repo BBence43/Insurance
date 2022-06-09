@@ -1,8 +1,8 @@
-package com.company;
+package com.company.models;
 
 import java.util.ArrayList;
 
-public class Ugyfel extends  Abstract{
+public class Ugyfel extends Model {
 
     private static int counter = 0;
     public static ArrayList<Ugyfel> lista = new ArrayList<>();

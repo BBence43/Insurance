@@ -1,4 +1,4 @@
-package com.company;
+package com.company.models;
 
 public enum IngatlanType {
     Társasház(1.1),

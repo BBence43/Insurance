@@ -1,11 +1,11 @@
-package com.company;
+package com.company.models;
 
-abstract class Abstract {
+public abstract class Model {
     private Integer id;
 
-    Abstract(){}
+    Model(){}
 
-    public Abstract(Integer id) {
+    public Model(Integer id) {
         this.id = id;
     }
 

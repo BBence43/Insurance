@@ -1,8 +1,8 @@
-package com.company;
+package com.company.models;
 
 import java.util.ArrayList;
 
-public class EletInsurance extends Abstract {
+public class EletInsurance extends Model {
     public EletInsurance(Integer id) {
         super(id);
     }

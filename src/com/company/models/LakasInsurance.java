@@ -1,9 +1,9 @@
-package com.company;
+package com.company.models;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class LakasInsurance extends Abstract {
+public class LakasInsurance extends Model {
     private String bizt_address;
     public static ArrayList<LakasInsurance> lista = new ArrayList<>();
     private IngatlanType ingatlantype;

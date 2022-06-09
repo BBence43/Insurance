@@ -1,8 +1,8 @@
-package com.company;
+package com.company.models;
 
 import java.util.ArrayList;
 
-public class AutoInsurance extends Abstract{
+public class AutoInsurance extends Model {
     public AutoInsurance(Integer id) {
         super(id);
     }
@@ -13,7 +13,9 @@ public class AutoInsurance extends Abstract{
     private Integer teljesitmeny;
     private Marka marka;
 
-
+    AutoInsurance(){
+        super(null);
+    }
 
     public AutoInsurance(Integer id, boolean tonna, String rendszam, String gyartasiev, Integer teljesitmeny, String marka) {
         super(id);
@@ -57,18 +59,21 @@ public class AutoInsurance extends Abstract{
         this.teljesitmeny = teljesitmeny;
     }
     public void setMarka(String marka){
-        switch (marka.toUpperCase()){
-            case "AUDI": this.marka = Marka.Audi;break;
-            case "BMW": this.marka = Marka.BMW;break;
-            case "MERCEDES": this.marka = Marka.Mercedes;break;
-            case "MAZDA": this.marka = Marka.Mazda;break;
-            case "OPEL": this.marka = Marka.Opel;break;
-            case "MAN": this.marka = Marka.MAN;break;
-            case "VOLVO": this.marka = Marka.Volvo;break;
-            case "PEUGEOT": this.marka = Marka.Peugeot;break;
-            case "SUZUKI": this.marka = Marka.Suzuki;break;
-            case "SCANIA": this.marka = Marka.Scania;break;
-        }
+
+            switch (marka.toUpperCase()){
+                case "AUDI": this.marka = Marka.Audi;break;
+                case "BMW": this.marka = Marka.BMW;break;
+                case "MERCEDES": this.marka = Marka.Mercedes;break;
+                case "MAZDA": this.marka = Marka.Mazda;break;
+                case "OPEL": this.marka = Marka.Opel;break;
+                case "MAN": this.marka = Marka.MAN;break;
+                case "VOLVO": this.marka = Marka.Volvo;break;
+                case "PEUGEOT": this.marka = Marka.Peugeot;break;
+                case "SUZUKI": this.marka = Marka.Suzuki;break;
+                case "SCANIA": this.marka = Marka.Scania;break;
+            }
+
+
 
 
     }

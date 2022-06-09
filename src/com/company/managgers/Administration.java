@@ -1,9 +1,13 @@
-package com.company;
+package com.company.managgers;
 
-import java.sql.SQLOutput;
+import com.company.models.AutoInsurance;
+import com.company.models.EletInsurance;
+import com.company.models.LakasInsurance;
+import com.company.models.Ugyfel;
+
 import java.util.Scanner;
 
-public class CRUD {
+public class Administration {
     Scanner be = new Scanner(System.in);
     XMLHandler xml = new XMLHandler();
     public void addUgyfel(){
@@ -25,7 +29,7 @@ public class CRUD {
     }
 
     public void Insurance(){
-        CRUD command = new CRUD();
+        Administration command = new Administration();
 
         System.out.println("Bevagy már regisztrálva?");
         System.out.println("1. Igen");
